@@ -9,7 +9,7 @@ public class SplineFollowerAttach : MonoBehaviour
 
     private SplineComputer currentSplineComputer;
 
-    private bool following = false;
+    public bool following = false;
 
     private void Start()
     {
