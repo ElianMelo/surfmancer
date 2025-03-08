@@ -88,12 +88,14 @@ public class PlayerMovement : MonoBehaviour
         {
             var objectInstance = Instantiate(splinePrefabUpLeft, splineSpawnPoint.position, Camera.main.transform.rotation);
             objectInstance.transform.Rotate(0f, 90f, 0f);
+            splineFollowerAttach.SetupSpline(objectInstance);
             //Destroy(objectInstance, 7f);
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             var objectInstance = Instantiate(splinePrefabUpRight, splineSpawnPoint.position, Camera.main.transform.rotation);
             objectInstance.transform.Rotate(0f, 90f, 0f);
+            splineFollowerAttach.SetupSpline(objectInstance);
             //Destroy(objectInstance, 7f);
         }
     }

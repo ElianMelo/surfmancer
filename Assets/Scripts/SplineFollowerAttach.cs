@@ -26,13 +26,21 @@ public class SplineFollowerAttach : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("WaterPlataform"))
-        {
-            currentSplineComputer = collision.collider.GetComponent<SplineComputer>();
-            splineFollower.spline = currentSplineComputer;
-            splineProjector.spline = currentSplineComputer;
-            EnterSpline();
-        }
+        //if(collision.collider.CompareTag("WaterPlataform"))
+        //{
+        //    currentSplineComputer = collision.collider.GetComponent<SplineComputer>();
+        //    splineFollower.spline = currentSplineComputer;
+        //    splineProjector.spline = currentSplineComputer;
+        //    EnterSpline();
+        //}
+    }
+
+    public void SetupSpline(GameObject objectWithSpline)
+    {
+        currentSplineComputer = objectWithSpline.GetComponent<SplineComputer>();
+        splineFollower.spline = currentSplineComputer;
+        splineProjector.spline = currentSplineComputer;
+        EnterSpline();
     }
 
     public void ClearSplineComputer()
